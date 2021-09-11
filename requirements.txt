@@ -1,0 +1,10 @@
+rpc
+playsound
+PyAutoGUI
+keyboard
+mouse
+numpy
+pydirectinput
+pynput
+opencv-python
+python3-xlib
