@@ -29,9 +29,10 @@ def random_look():
 def look_around():
     look(random_look(), random_look(), duration=random.randint(1, 3))
 
-def walk(direction='w', duration: float=):
-    pyautogui.press()
-    pyautogui.releas
+def walk(direction='w', duration=3):
+    pyautogui.press('w')
+    time.sleep(duration)
+    pyautogui.release('w')
 
 def wait_attack(sword: bool=True):
     t = 1.25
@@ -56,3 +57,23 @@ def attack(critical=True):
         pyautogui.press('space')
         time.sleep(0.6)
     press()
+
+def spam_place(block_count: int):
+    for _ in range(1, block_count):
+        press(left=False)
+        time.sleep(0.01)
+
+def auto_mine():
+    while True:
+        
+        pyautogui.keyDown('w')
+        time.sleep(.3)
+        pyautogui.keyUp('w')
+        pyautogui.keyUp('shift')
+
+        time.sleep(.2)
+
+        pyautogui.mouseDown(button='left')
+        time.sleep(1.5)
+        pyautogui.keyDown('shift')
+        pyautogui.mouseUp(button='left')
